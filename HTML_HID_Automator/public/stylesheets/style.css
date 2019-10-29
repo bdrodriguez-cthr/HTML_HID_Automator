@@ -6,3 +6,15 @@ body {
 a {
   color: #00B7FF;
 }
+
+#generate-hids {
+  color: #0099CC;
+  background: transparent;
+  border: 2px solid #0099CC;
+  border-radius: 6px; 
+}
+
+#generate-hids:hover {
+  background-color: #008CBA;
+  color: white;
+ }
