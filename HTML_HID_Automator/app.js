@@ -3,13 +3,11 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var d3 = require('d3');
-
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var bodyParser = require('body-parser');
 
 var app = express();
 app.use("/public", express.static('./public/'));
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -17,11 +15,45 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+//ROUTES
+app.get('/', function(req, res) {
+  res.render('index', { title: 'HID Automator' });
+});
+
+app.post('/preview', function(req, res) {
+  var csvText = req.body["address-data"];
+  var rows = csvText.split(";");
+
+  var parsedData = [];
+
+  //Create Columns
+  rows.forEach(function(row) {
+    var rowArray = row.split(",");
+    parsedData.push(rowArray);
+  });
+  
+  //Clean up data
+  parsedData.pop()
+  parsedData.forEach(function(row) {
+    row.pop();
+  });
+  for(var i = 0; i < parsedData.length - 1; i++) {
+    parsedData[i+1][0] = parsedData[i+1][0].trim();
+  }
+  console.log(parsedData);
+
+  res.render('preview', {data: parsedData});  
+});
+
+
+
+
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

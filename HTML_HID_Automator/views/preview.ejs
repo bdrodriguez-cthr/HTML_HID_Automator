@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+   
+    <% data.forEach(function(row) { %>
+      <div class="hid">
+        <div class="header"><%= row[0] %></div>
+        <div class="side"></div>
+        <div class="image"></div>
+        <div class="chance-of-replacement"></div>
+        <div class="table"></div>
+      </div>
+    <% }); %>
+  </body>
+</html>

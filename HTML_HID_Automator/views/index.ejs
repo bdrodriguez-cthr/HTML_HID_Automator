@@ -3,22 +3,24 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
-    <script type="text/javascript" src="../public/javascripts/csvProcesser.js"></script>
+    <!-- <script type="text/javascript" src="../public/javascripts/csvProcesser.js"></script> -->
   </head>
   <body>
     <h1><%= title %></h1>
     <h3>Upload your data below to get started.</h3>
 
     <form action="/preview" method="POST">
-      <label for="address-data">Upload your address data</label><br>
+      <!-- <label for="address-data">Upload your address data</label><br>
       <input type="file" name="address-data" id="address-data" accept=".csv"><br><br>
      
       <label for="image-files">Select the images that will be added to these HIDs</label><br>
-      <input type="file" name="image-files" id="image-files" accept="image/*" multiple><br><br><br>
-  
+      <input type="file" name="image-files" id="image-files" accept="image/*" multiple><br><br><br> -->
+      <label for="address-data">Copy and paste the csv here</label>
+      <textarea name="address-data" id="address-data" cols="100" rows="30"></textarea>
+
+
       <button type="submit" id="generate-hids">Generate HIDs</button>
     </form>
-
-    <a href="/users">Go to user route</a>
+    
   </body>
 </html>
