@@ -44,8 +44,7 @@ app.post('/preview', function(req, res) {
   for(var i = 0; i < parsedData.length - 1; i++) {
     parsedData[i+1][0] = parsedData[i+1][0].trim();
   }
-  console.log(parsedData);
-
+  
   res.render('preview', {data: parsedData});  
 });
 

@@ -6,12 +6,40 @@
   <body>
    
     <% data.forEach(function(row) { %>
-      <div class="hid">
-        <div class="header"><%= row[0] %></div>
-        <div class="side"></div>
-        <div class="image"></div>
-        <div class="chance-of-replacement"></div>
-        <div class="table"></div>
+      
+      <div class="page">
+        <div class="hid">
+          <div class="header"><%= row[1] %></div>
+          <div class="body">
+            <div class="side">
+              <img id="side-image" src="./../public/images/side.png">
+            </div>
+            <div class="center">
+              <div class="image">
+                <img id="center-image" src="./../public/images/test-property-image.png">
+              </div>
+              <div class="chance-of-replacement">
+                <img id="chance-image" src="./../public/images/chance.png">
+              </div>
+              <div class="table">
+                <table>
+                  <tr>
+                    <th>Owner</th>
+                    <td><%= row[0] %></td>
+                  </tr>
+                  <tr>
+                    <th>Property Address</th>
+                    <td><%= row[1] %>, <%= row[2] %>, <%= row[3] %></td>
+                  </tr>
+                  <tr>
+                    <th>Mailing Address</th>
+                    <td><%= row[1] %></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     <% }); %>
   </body>

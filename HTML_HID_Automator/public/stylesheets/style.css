@@ -1,22 +1,121 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  border: 5px red solid;
 }
 
 a {
   color: #00B7FF;
 }
 
-.hid {
+.page {
   width: 21cm;
   min-height: 29.7cm;
-  padding: 2cm;
-  margin: 1cm auto;
+  padding: 0.5cm 0.5cm 0.1cm 0.5cm;
+  margin: 0.5cm auto;
   border: 1px #D3D3D3 solid;
   border-radius: 5px;
   background: white;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  
 }
+
+#side-image {
+  width: 100%;
+  
+}
+
+#chance-image {
+  width: 95%;
+  margin: 10px;
+}
+#center-image {
+  width: 95%;
+ 
+}
+
+.hid {
+  /* border: seagreen 5px solid; */
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  
+  
+}
+
+
+.header {
+  height: 20%;
+  text-align: center;
+  font-family: calibri;
+  font-size: 60px;
+  color: white;
+  background-color: red;
+  padding: 10px 0;
+  margin-bottom: 40px;
+
+  
+}
+
+.body {
+  height: 80%;
+
+  display: flex;
+  flex-direction: row;
+}
+.side{
+  width: calc(100% / 3);
+}
+
+.center {
+  width: calc(2 * (100% / 3));
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.image{
+  height: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.chance-of-replacement{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+table {
+  margin: 10px;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 15px;
+}
+
+th {
+  text-align: left;
+}
+
+td {
+  
+}
+
+
+
+
+
+
+
 
 #generate-hids {
   color: #0099CC;
