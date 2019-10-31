@@ -4,7 +4,21 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
+var multer = require('multer');
 
+//Multer file upload setup
+var storage = multer.diskStorage({
+  destination: function(req, file, cb) {
+    cb(null, './public/images/uploads');
+  },
+  filename: function(req, file, cb) {
+    cb(null, file.originalname + path.extname(file.originalname));
+  }
+});
+
+var upload = multer({ storage: storage });
+
+//express setup
 var app = express();
 app.use("/public", express.static('./public/'));
 
@@ -24,19 +38,26 @@ app.get('/', function(req, res) {
   res.render('index', { title: 'HID Automator' });
 });
 
-app.post('/preview', function(req, res) {
+app.post('/preview', upload.array('images-input'), function(req, res) {
+  //Handle Image uploads
+    //Make sure to pass the files to the client below
+  req.files.forEach(function(file) {
+    console.log(file.originalname);
+  });
+
+  //Handle address data
   var csvText = req.body["address-data"];
   var rows = csvText.split(";");
 
   var parsedData = [];
 
-  //Create Columns
+    //Create Columns
   rows.forEach(function(row) {
     var rowArray = row.split(",");
     parsedData.push(rowArray);
   });
   
-  //Clean up data
+    //Clean up data
   parsedData.pop()
   parsedData.forEach(function(row) {
     row.pop();
@@ -45,7 +66,7 @@ app.post('/preview', function(req, res) {
     parsedData[i+1][0] = parsedData[i+1][0].trim();
   }
   
-  res.render('preview', {data: parsedData});  
+  res.render('preview', {data: parsedData, files: req.files});  
 });
 
 

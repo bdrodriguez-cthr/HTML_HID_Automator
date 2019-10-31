@@ -1,7 +1,8 @@
 body {
-  padding: 50px;
+  display: flex;
+  flex-direction: column;
 
-  border: 5px red solid;
+  padding: 50px;
 
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
@@ -10,105 +11,73 @@ a {
   color: #00B7FF;
 }
 
-.page {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  
-  width: 21cm;
-  min-height: 29.7cm;
-  padding: 0.5cm 0.5cm 0.1cm 0.5cm;
-  margin: 0.5cm auto;
+/* h1, h3 {
+  margin: 5px auto;
+} */
 
-  border: 1px #D3D3D3 solid;
-  border-radius: 5px;
-  background: white;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-.hid {
-  display: flex;
-  flex-direction: column;
-  
-  height: 100%;
-  width: 100%;
-  
-}
-
-.header {
-  height: 20%;
-  padding: 10px 0;
-  margin-bottom: 40px;
-
-  color: white;
-  background-color: red;
-
-  text-align: center;
-  font-family: calibri;
-  font-size: 60px;
-}
-
-.body {
+/* #forms {
   display: flex;
   flex-direction: row;
 
-  height: 80%;
+  padding: 5px;
+
+  border: firebrick 1px solid;
 }
 
-.side{
-  width: calc(100% / 3);
-}
-
-#side-image {
-  width: 100%;
-}
-
-.center {
+#images-upload {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  
-  width: calc(2 * (100% / 3));
+  align-items: center;
+
+  border: black 1px solid;
+
+  width: 50%;
 }
 
-.image{
+#address-data-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border: black 1px solid;
+
+  width: 50%;
+}
+#address-data-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 80%;
+} */
+
+#form {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  
-  height: 40%;
+
+  padding: 5px;
+
+  border: firebrick 1px solid;
 }
 
-#center-image {
-  width: 95%;
-}
-
-.chance-of-replacement{
+#images-upload {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  border: black 1px solid;
+
+  width: 50%;
 }
 
-#chance-image {
-  width: 95%;
-  margin: 10px;
-}
+#address-data-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-table {
-  margin: 0 auto;
-}
+  border: black 1px solid;
 
-th, td {
-  border: 1px solid black;
-  padding: 15px;
-}
-
-th {
-  text-align: left;
-}
-
-td {
-  padding-right: 84px;
+  width: 50%;
 }
 
 /* Button */

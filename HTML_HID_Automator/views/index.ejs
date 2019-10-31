@@ -8,19 +8,41 @@
   <body>
     <h1><%= title %></h1>
     <h3>Upload your data below to get started.</h3>
+    
+    <!-- <div id="forms">
+      <div id="images-upload">
+        <h4>1) Upload your images</h4>
+        <form action="">
+          <input type="file" name="images-input" id="images-input">
+        </form>
+      </div>
+      <div id="address-data-div">
+        <h4>2) Copy and paste your address data</h4>
+        <form id="address-data-form" action="/preview" method="POST">
+            <label for="address-data">Copy and paste the csv here</label>
+            <textarea name="address-data" id="address-data" cols="50" rows="15"></textarea>
+            <button type="submit" id="generate-hids">Generate HIDs</button>
+        </form>
+      </div>
+    </div> -->
 
-    <form action="/preview" method="POST">
-      <!-- <label for="address-data">Upload your address data</label><br>
-      <input type="file" name="address-data" id="address-data" accept=".csv"><br><br>
-     
-      <label for="image-files">Select the images that will be added to these HIDs</label><br>
-      <input type="file" name="image-files" id="image-files" accept="image/*" multiple><br><br><br> -->
-      <label for="address-data">Copy and paste the csv here</label>
-      <textarea name="address-data" id="address-data" cols="100" rows="30"></textarea>
-
-
-      <button type="submit" id="generate-hids">Generate HIDs</button>
+    <form id="form" action="/preview" enctype="multipart/form-data" method="POST">
+    
+      <div id="images-upload">
+        <h4>1) Upload your images</h4>
+        <input type="file" name="images-input" id="images-input" multiple>
+      </div>
+    
+      <div id="address-data-div">
+        <h4>2) Copy and paste your address data</h4>
+        <label for="address-data">Copy and paste the csv here</label>
+        <textarea name="address-data" id="address-data" cols="50" rows="15"></textarea>
+        <button type="submit" id="generate-hids">Generate HIDs</button>
+      </div>
+    
+    
     </form>
+    
     
   </body>
 </html>
