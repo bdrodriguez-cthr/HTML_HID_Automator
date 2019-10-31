@@ -1,7 +1,9 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
   border: 5px red solid;
+
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -9,82 +11,76 @@ a {
 }
 
 .page {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  
   width: 21cm;
   min-height: 29.7cm;
   padding: 0.5cm 0.5cm 0.1cm 0.5cm;
   margin: 0.5cm auto;
+
   border: 1px #D3D3D3 solid;
   border-radius: 5px;
   background: white;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  
-}
-
-#side-image {
-  width: 100%;
-  
-}
-
-#chance-image {
-  width: 95%;
-  margin: 10px;
-}
-#center-image {
-  width: 95%;
- 
 }
 
 .hid {
-  /* border: seagreen 5px solid; */
-  height: 100%;
-  width: 100%;
   display: flex;
   flex-direction: column;
-  position: relative;
   
+  height: 100%;
+  width: 100%;
   
 }
-
 
 .header {
   height: 20%;
-  text-align: center;
-  font-family: calibri;
-  font-size: 60px;
-  color: white;
-  background-color: red;
   padding: 10px 0;
   margin-bottom: 40px;
 
-  
+  color: white;
+  background-color: red;
+
+  text-align: center;
+  font-family: calibri;
+  font-size: 60px;
 }
 
 .body {
-  height: 80%;
-
   display: flex;
   flex-direction: row;
+
+  height: 80%;
 }
+
 .side{
   width: calc(100% / 3);
 }
 
-.center {
-  width: calc(2 * (100% / 3));
+#side-image {
+  width: 100%;
+}
 
+.center {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
+  
+  width: calc(2 * (100% / 3));
 }
 
 .image{
-  height: 40%;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  
+  height: 40%;
+}
+
+#center-image {
+  width: 95%;
 }
 
 .chance-of-replacement{
@@ -93,8 +89,13 @@ a {
   justify-content: center;
 }
 
-table {
+#chance-image {
+  width: 95%;
   margin: 10px;
+}
+
+table {
+  margin: 0 auto;
 }
 
 th, td {
@@ -107,16 +108,10 @@ th {
 }
 
 td {
-  
+  padding-right: 84px;
 }
 
-
-
-
-
-
-
-
+/* Button */
 #generate-hids {
   color: #0099CC;
   background: transparent;
