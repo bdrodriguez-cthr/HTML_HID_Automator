@@ -112,3 +112,16 @@ body {
   td {
     padding-right: 84px;
   }
+
+  button {
+    color: #0099CC;
+    background: transparent;
+    border: 2px solid #0099CC;
+    border-radius: 6px; 
+    font-size: 50px;
+  }
+  
+  button:hover {
+    background-color: #008CBA;
+    color: white;
+   }
