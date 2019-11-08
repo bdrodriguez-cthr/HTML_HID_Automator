@@ -18,6 +18,3 @@ window.onload = function() {
         document.getElementsByClassName("page")[0].remove()
     }
 }
-
-
-

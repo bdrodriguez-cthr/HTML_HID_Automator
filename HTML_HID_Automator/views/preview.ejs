@@ -8,7 +8,17 @@
    
     <button>Save to PDF</button>
 
-
+    <%
+      var matchPicture = function(address) {
+        var filesArr = [];
+        files.forEach(function(file) {
+            filesArr.push(file.filename);
+        });
+        console.log(address.length);
+        return address;
+      }
+        
+    %>
     <% data.forEach(function(row) { %>
       
       <div class="page">
@@ -20,8 +30,8 @@
             </div>
             <div class="center">
               <div class="image">
-                <!-- <img id="center-image" src="./../public/images/test-property-image.png"> -->
-                <img id="center-image" src="">
+                <% console.log(matchPicture(row[0])); %>
+                <!-- <img id="center-image" src="./../public/images/uploads/<%= matchPicture(row[0]) %>"> -->
               </div>
               <div class="chance-of-replacement">
                 <img id="chance-image" src="./../public/images/chance.png">

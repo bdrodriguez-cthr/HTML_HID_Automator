@@ -41,9 +41,11 @@ app.get('/', function(req, res) {
 app.post('/preview', upload.array('images-input'), function(req, res) {
   //Handle Image uploads
     //Make sure to pass the files to the client below
-  req.files.forEach(function(file) {
-    console.log(file.originalname);
-  });
+  // req.files.forEach(function(file) {
+  //   console.log(file.originalname);
+  // });
+
+  // console.log(req.files);
 
   //Handle address data
   var csvText = req.body["address-data"];
