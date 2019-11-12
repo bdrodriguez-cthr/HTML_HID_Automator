@@ -2,24 +2,12 @@
 <html>
   <head>
     <link rel='stylesheet' href='./../public/stylesheets/preview.css' />
-    
+    <script src="./../public/javascripts/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
   </head>
   <body>
    
-    <button>Save to PDF</button>
-
-    <%
-      var matchPicture = function(address) {
-        var filesArr = [];
-        files.forEach(function(file) {
-            filesArr.push(file.filename);
-        });
-        console.log(address.length);
-        return address;
-      }
-        
-    %>
-    <% data.forEach(function(row) { %>
+    <% data.forEach(function(row, i) { %>
       
       <div class="page">
         <div class="hid">
@@ -30,8 +18,7 @@
             </div>
             <div class="center">
               <div class="image">
-                <% console.log(matchPicture(row[0])); %>
-                <!-- <img id="center-image" src="./../public/images/uploads/<%= matchPicture(row[0]) %>"> -->
+                <img id="center-image" src="./../public/images/uploads/<%= files[i].filename %>">
               </div>
               <div class="chance-of-replacement">
                 <img id="chance-image" src="./../public/images/chance.png">
@@ -58,7 +45,8 @@
       </div>
     <% }); %>
 
-    <script src="./../public/javascripts/html2canvas.min.js"></script>
+    <button id="download-as-pdf">Save to PDF</button>
+    
     <script  src="./../public/javascripts/preview.js"></script>
 
   </body>

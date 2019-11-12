@@ -22,10 +22,10 @@ body {
     padding: 0.5cm 0.5cm 0.1cm 0.5cm;
     margin: 0.5cm auto;
   
-    border: 1px #D3D3D3 solid;
-    border-radius: 5px;
+    /* border: 1px #D3D3D3 solid; */
+    /* border-radius: 5px; */
     background: white;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); */
   }
   
   .hid {
